@@ -13,7 +13,7 @@ import { ContactCard } from "./components/ContactCard";
 import { Modal } from "./components/Modal";
 const App = () => {
   const [contacts, setContacts] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const onOpen = () => {
     setOpen(true);
@@ -54,7 +54,10 @@ const App = () => {
             />
           </div>
 
-          <FaCirclePlus className="text-white cursor-pointer text-5xl my-4 ml-3" />
+          <FaCirclePlus
+            onClick={onOpen}
+            className="text-white cursor-pointer text-5xl my-4 ml-3"
+          />
         </div>
         <div className="mt-4 flex flex-col gap-4">
           {contacts.map((contact) => (
@@ -62,7 +65,9 @@ const App = () => {
           ))}
         </div>
       </div>
-      <Modal isOpen={isOpen} onClose={onClose} />
+      <Modal isOpen={isOpen} onClose={onClose}>
+        dgdhbcdhcd
+      </Modal>
     </>
   );
 };

@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import { BiSolidTrash } from "react-icons/bi";
 import { PiUserCircle } from "react-icons/pi";
 import { RiEditCircleLine } from "react-icons/ri";
