@@ -10,17 +10,12 @@ import { getFirestore } from "firebase/firestore";
 // import { RiEditCircleLine } from "react-icons/ri";
 // import { BiSolidTrash } from "react-icons/bi";
 import { ContactCard } from "./components/ContactCard";
-import { Modal } from "./components/Modal";
+// import { Modal } from "./components/Modal";
+import { AddUpdateContact } from "./components/AddUpdateContact";
+import { useDisclouse } from "./hooks/useDisclouse";
 const App = () => {
   const [contacts, setContacts] = useState([]);
-  const [isOpen, setOpen] = useState(false);
-
-  const onOpen = () => {
-    setOpen(true);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
+  const { isOpen, onClose, onOpen } = useDisclouse();
 
   useEffect(() => {
     const getContacts = async () => {
@@ -65,9 +60,7 @@ const App = () => {
           ))}
         </div>
       </div>
-      <Modal isOpen={isOpen} onClose={onClose}>
-        dgdhbcdhcd
-      </Modal>
+      <AddUpdateContact onClose={onClose} isOpen={isOpen} />
     </>
   );
 };
